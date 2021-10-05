@@ -63,7 +63,11 @@
         android:id="@+id/deviceLightFragment"
         android:name="com.example.mysmarthome.ui.fragment.device_light.DeviceLightFragment"
         android:label="DeviceLightFragment"
-        tools:layout="@layout/fragment_device_light" />
+        tools:layout="@layout/fragment_device_light" >
+        <argument
+            android:name="lightDeviceId"
+            app:argType="long" />
+    </fragment>
     <fragment
         android:id="@+id/deviceHeaterFragment"
         android:name="com.example.mysmarthome.ui.fragment.device_heater.DeviceHeaterFragment"
@@ -77,6 +81,10 @@
         android:id="@+id/deviceRollerShutterFragment"
         android:name="com.example.mysmarthome.ui.fragment.device_roller_shutter.DeviceRollerShutterFragment"
         android:label="DeviceRollerShutterFragment"
-        tools:layout="@layout/fragment_device_roller_shutter" />
+        tools:layout="@layout/fragment_device_roller_shutter" >
+        <argument
+            android:name="rollerShutterDeviceId"
+            app:argType="long" />
+    </fragment>
 
 </navigation>

@@ -27,11 +27,21 @@
     <string name="birthday">Birthday</string>
     <string name="update">Update</string>
     <string name="device_name">Device Name</string>
-    <string name="min_temperature">Min temperature: %1$.1f °C</string>
-    <string name="max_temperature">Max temperature: %1$.1f °C</string>
-    <string name="current_temperature_is">Current temperature: %1$.1f °C</string>
 
+    <string name="min_temperature">Min temp: %1$.1f °C</string>
+    <string name="max_temperature">Max temp: %1$.1f °C</string>
+    <string name="current_temperature">Current temp: %1$.1f °C</string>
     <string name="heater_device_data_updated">Heater device data has been updated</string>
+
+    <string name="min_light_intensity">Min intensity: %1$d</string>
+    <string name="max_light_intensity">Max intensity: %1$1d</string>
+    <string name="current_light_intensity">Current light intensity: %1$d</string>
+    <string name="light_device_data_updated">Light device data has been updated</string>
+
+    <string name="min_roller_shutter_position">Min position: %1$d</string>
+    <string name="max_roller_shutter_position">Max position: %1$d</string>
+    <string name="current_roller_shutter_position">Current position: %1$d</string>
+    <string name="roller_shutter_device_data_updated">Roller Shutter device data has been updated</string>
 
     <string name="mode">Mode</string>
     <string name="device_mode_on">ON</string>

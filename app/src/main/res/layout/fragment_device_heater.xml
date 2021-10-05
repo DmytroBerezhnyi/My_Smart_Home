@@ -9,6 +9,17 @@
         android:layout_height="match_parent"
         tools:context=".ui.fragment.device_heater.DeviceHeaterFragment">
 
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_back"
+            android:layout_width="@dimen/icon_back_size"
+            android:layout_height="@dimen/icon_back_size"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_arrow_back"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -23,8 +34,8 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv_heater"
-                android:layout_width="@dimen/profile_photo_size"
-                android:layout_height="@dimen/profile_photo_size"
+                android:layout_width="@dimen/device_image_size"
+                android:layout_height="@dimen/device_image_size"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/ic_heater" />
 
@@ -40,10 +51,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:hint="@string/device_name"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/til_user_country">
+                    android:hint="@string/device_name">
 
                     <com.google.android.material.textfield.TextInputEditText
                         style="@style/MaterialTextInputEditTextDisabled"
@@ -59,10 +67,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_weight="1"
-                    android:hint="@string/mode"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/til_user_country">
+                    android:hint="@string/mode">
 
                     <com.google.android.material.textfield.TextInputEditText
                         style="@style/MaterialTextInputEditTextDisabled"
@@ -81,7 +86,7 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="16dp"
                 android:layout_weight="1"
-                android:text="@string/current_temperature_is" />
+                android:text="@string/current_temperature" />
 
             <com.google.android.material.slider.Slider
                 android:id="@+id/slider_temperature"
@@ -120,7 +125,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="8dp"
-                android:text="@string/update" />
+                android:text="@string/update"
+                android:textAllCaps="false" />
 
         </LinearLayout>
 

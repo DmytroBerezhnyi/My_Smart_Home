@@ -27,7 +27,7 @@ class HomeFragment : BaseFragment<HomeFragmentBinding, HomeViewModel>() {
                 is Device.LightDevice -> {
                     onNavigateTo(
                         NavigationModel(
-                            HomeFragmentDirections.actionHomeFragmentToDeviceLightFragment()
+                            HomeFragmentDirections.actionHomeFragmentToDeviceLightFragment(it.id)
                         )
                     )
                 }
@@ -41,7 +41,7 @@ class HomeFragment : BaseFragment<HomeFragmentBinding, HomeViewModel>() {
                 is Device.RollerShutterDevice -> {
                     onNavigateTo(
                         NavigationModel(
-                            HomeFragmentDirections.actionHomeFragmentToDeviceRollerShutterFragment()
+                            HomeFragmentDirections.actionHomeFragmentToDeviceRollerShutterFragment(it.id)
                         )
                     )
                 }

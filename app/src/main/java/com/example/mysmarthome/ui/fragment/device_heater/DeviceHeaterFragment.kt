@@ -6,11 +6,16 @@ import androidx.navigation.fragment.navArgs
 import com.example.domain.model.ui.Device
 import com.example.mysmarthome.R
 import com.example.mysmarthome.base.architecture.BaseFragment
+import com.example.mysmarthome.base.model.NavigationModel
 import com.example.mysmarthome.databinding.FragmentDeviceHeaterBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DeviceHeaterFragment : BaseFragment<FragmentDeviceHeaterBinding, DeviceHeaterViewModel>() {
+
+    private val MIN_TEMPERATURE = 7.0f
+    private val MAX_TEMPERATURE = 28.0f
+    private val STEP_TEMPERATURE = 0.5f
 
     private val args: DeviceHeaterFragmentArgs by navArgs()
 
@@ -24,14 +29,14 @@ class DeviceHeaterFragment : BaseFragment<FragmentDeviceHeaterBinding, DeviceHea
     }
 
     override fun FragmentDeviceHeaterBinding.initView() {
-        tvMaxTemperature.text = getString(R.string.max_temperature, 28.0)
-        tvMinTemperature.text = getString(R.string.min_temperature, 7.0)
+        tvMaxTemperature.text = getString(R.string.max_temperature, MAX_TEMPERATURE)
+        tvMinTemperature.text = getString(R.string.min_temperature, MIN_TEMPERATURE)
 
         sliderTemperature.apply {
-            value = 7.0f
-            stepSize = 0.5f
-            valueFrom = 7.0f
-            valueTo = 28.0f
+            value = MIN_TEMPERATURE
+            stepSize = STEP_TEMPERATURE
+            valueFrom = MIN_TEMPERATURE
+            valueTo = MAX_TEMPERATURE
             addOnChangeListener { slider, value, fromUser ->
                 vm.heaterDevice.value = vm.heaterDevice.value?.copy(
                     temperature = value.toDouble()
@@ -57,12 +62,16 @@ class DeviceHeaterFragment : BaseFragment<FragmentDeviceHeaterBinding, DeviceHea
                 )
             }
         }
+
+        ivBack.setOnClickListener {
+            onNavigateTo(NavigationModel(popBack = true))
+        }
     }
 
     override fun DeviceHeaterViewModel.setupViewObservers() {
         heaterDevice.observe(viewLifecycleOwner) {
             viewDataBinding.tvCurrentTemperature.text =
-                getString(R.string.current_temperature_is, it.temperature)
+                getString(R.string.current_temperature, it.temperature)
             viewDataBinding.sliderTemperature.value = it.temperature.toFloat()
             viewDataBinding.tilDeviceName.editText?.setText(it.deviceName)
             viewDataBinding.tilDeviceMode.editText?.setText(

@@ -8,6 +8,7 @@ import com.example.domain.model.ui.UserUiModel
 import com.example.mysmarthome.R
 import com.example.mysmarthome.base.architecture.BaseFragment
 import com.example.mysmarthome.base.extension.showDatePicker
+import com.example.mysmarthome.base.model.NavigationModel
 import com.example.mysmarthome.base.model.SnackbarModel
 import com.example.mysmarthome.databinding.FragmentUserProfileBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -138,6 +139,10 @@ class UserProfileFragment : BaseFragment<FragmentUserProfileBinding, UserProfile
             } else {
                 showSnackBar(SnackbarModel(vm.errorSet.first()))
             }
+        }
+
+        ivBack.setOnClickListener {
+            onNavigateTo(NavigationModel(popBack = true))
         }
     }
 
