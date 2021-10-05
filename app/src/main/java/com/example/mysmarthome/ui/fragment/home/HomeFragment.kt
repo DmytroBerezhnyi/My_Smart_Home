@@ -1,11 +1,11 @@
 package com.example.mysmarthome.ui.fragment.home
 
-import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.viewModels
-import com.example.domain.model.ui.ProductType
+import com.example.domain.extensions.toJson
+import com.example.domain.model.ui.Device
 import com.example.domain.util.DeviceFilter
 import com.example.mysmarthome.R
 import com.example.mysmarthome.base.architecture.BaseFragment
@@ -23,22 +23,22 @@ class HomeFragment : BaseFragment<HomeFragmentBinding, HomeViewModel>() {
 
     private val deviceAdapter by lazy {
         DeviceAdapter(onItemClicked = {
-            when (it.productType) {
-                ProductType.Light -> {
+            when (it) {
+                is Device.LightDevice -> {
                     onNavigateTo(
                         NavigationModel(
                             HomeFragmentDirections.actionHomeFragmentToDeviceLightFragment()
                         )
                     )
                 }
-                ProductType.Heater -> {
+                is Device.HeaterDevice -> {
                     onNavigateTo(
                         NavigationModel(
-                            HomeFragmentDirections.actionHomeFragmentToDeviceHeaterFragment()
+                            HomeFragmentDirections.actionHomeFragmentToDeviceHeaterFragment(it.id)
                         )
                     )
                 }
-                ProductType.RollerShutter -> {
+                is Device.RollerShutterDevice -> {
                     onNavigateTo(
                         NavigationModel(
                             HomeFragmentDirections.actionHomeFragmentToDeviceRollerShutterFragment()

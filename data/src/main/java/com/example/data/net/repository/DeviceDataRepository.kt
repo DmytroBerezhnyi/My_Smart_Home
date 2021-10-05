@@ -1,7 +1,6 @@
 package com.example.data.net.repository
 
 import android.content.Context
-import android.util.Log
 import com.example.data.database.dao.SmartDeviceDao
 import com.example.data.database.entity.*
 import com.example.domain.extensions.iterator
@@ -12,6 +11,7 @@ import com.example.domain.model.ui.ProductType
 import com.example.domain.repository.DeviceRepository
 import com.example.domain.util.DeviceFilter
 import org.json.JSONObject
+import timber.log.Timber
 
 class DeviceDataRepository(
     private val context: Context,
@@ -43,6 +43,23 @@ class DeviceDataRepository(
             DeviceFilter.Light -> deviceList.filter { it.productType == ProductType.Light }
             DeviceFilter.Heater -> deviceList.filter { it.productType == ProductType.Heater }
             DeviceFilter.RollerShutter -> deviceList.filter { it.productType == ProductType.RollerShutter }
+        }
+    }
+
+    override suspend fun getDevice(productType: ProductType, deviceId: Long): Device {
+        return when (productType) {
+            ProductType.Light -> deviceDao.getLightDeviceById(deviceId).toLightDevice()
+            ProductType.Heater -> deviceDao.getHeaterDeviceById(deviceId).toHeaterDevice()
+            ProductType.RollerShutter -> deviceDao.getRollerShutterDeviceById(deviceId)
+                .toRollerShutterDevice()
+        }
+    }
+
+    override suspend fun updateDevice(device: Device) {
+        when (device) {
+            is LightDevice -> deviceDao.update(device.toLightDeviceEntity())
+            is HeaterDevice -> deviceDao.update(device.toHeaterDeviceEntity())
+            is RollerShutterDevice -> deviceDao.update(device.toRollerShutterDeviceEntity())
         }
     }
 

@@ -68,7 +68,11 @@
         android:id="@+id/deviceHeaterFragment"
         android:name="com.example.mysmarthome.ui.fragment.device_heater.DeviceHeaterFragment"
         android:label="DeviceHeaterFragment"
-        tools:layout="@layout/fragment_device_heater" />
+        tools:layout="@layout/fragment_device_heater">
+        <argument
+            android:name="heaterDeviceId"
+            app:argType="long" />
+    </fragment>
     <fragment
         android:id="@+id/deviceRollerShutterFragment"
         android:name="com.example.mysmarthome.ui.fragment.device_roller_shutter.DeviceRollerShutterFragment"

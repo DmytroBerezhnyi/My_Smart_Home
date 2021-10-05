@@ -12,7 +12,6 @@
     <string name="error_empty_country">Country can not be empty</string>
 
     <string name="user_data_has_been_updated">User data has been updated</string>
-
     <string name="all">All</string>
     <string name="light">Light</string>
     <string name="heater">Heater</string>
@@ -27,4 +26,14 @@
     <string name="country">Country</string>
     <string name="birthday">Birthday</string>
     <string name="update">Update</string>
+    <string name="device_name">Device Name</string>
+    <string name="min_temperature">Min temperature: %1$.1f °C</string>
+    <string name="max_temperature">Max temperature: %1$.1f °C</string>
+    <string name="current_temperature_is">Current temperature: %1$.1f °C</string>
+
+    <string name="heater_device_data_updated">Heater device data has been updated</string>
+
+    <string name="mode">Mode</string>
+    <string name="device_mode_on">ON</string>
+    <string name="device_mode_off">OFF</string>
 </resources>
