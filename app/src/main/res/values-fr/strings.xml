@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ma maison intelligente</string>
+    <string name="error_connection_timeout">Délai de connection dépassé</string>
+    <string name="error_internet">Une erreur Internet s\'est produite</string>
+
+    <string name="error_empty_first_name">Le prénom ne peut pas être vide</string>
+    <string name="error_empty_last_name">Le nom de famille ne peut pas être vide</string>
+    <string name="error_empty_city">La ville ne peut pas être vide</string>
+    <string name="error_empty_street">La rue ne peut pas être vide</string>
+    <string name="error_empty_street_code">Le code de la rue ne peut pas être vide</string>
+    <string name="error_empty_postal_code">Le code postal ne peut pas être vide</string>
+    <string name="error_empty_country">Le pays ne peut pas être vide</string>
+
+    <string name="user_data_has_been_updated">Les données utilisateur ont été mises à jour</string>
+    <string name="all">Tout</string>
+    <string name="light">Léger</string>
+    <string name="heater">Chauffe-eau</string>
+    <string name="roller_shutter">Volet roulant</string>
+    <string name="smart_devices">Appareils intelligents</string>
+    <string name="first_name">Prénom</string>
+    <string name="last_name">Nom de famille</string>
+    <string name="city">Ville</string>
+    <string name="postal_code">Code postal</string>
+    <string name="street">Rue</string>
+    <string name="street_code">Code de la rue</string>
+    <string name="country">Pays</string>
+    <string name="birthday">Anniversaire</string>
+    <string name="update">Mettre à jour</string>
+    <string name="device_name">Nom de l\'appareil</string>
+
+    <string name="min_temperature">Temp min: %1$.1f °C</string>
+    <string name="max_temperature">Temp maximale: %1$.1f °C</string>
+    <string name="current_temperature">Temp actuelle: %1$.1f °C</string>
+    <string name="heater_device_data_updated">Les données de l\'appareil de chauffage ont été mises à jour</string>
+
+    <string name="min_light_intensity">Intensité minimale: %1$d</string>
+    <string name="max_light_intensity">Intensité maximale: %1$1d</string>
+    <string name="current_light_intensity">Intensité lumineuse actuelle: %1$d</string>
+    <string name="light_device_data_updated">Les données de l\'appareil léger ont été mises à jour</string>
+
+    <string name="min_roller_shutter_position">Position minimale: %1$d</string>
+    <string name="max_roller_shutter_position">Position maximale: %1$d</string>
+    <string name="current_roller_shutter_position">Position actuelle: %1$d</string>
+    <string name="roller_shutter_device_data_updated">Les données du dispositif de volet roulant ont été mises à jour</string>
+
+    <string name="mode">Mode</string>
+    <string name="device_mode_on">AU</string>
+    <string name="device_mode_off">DÉSACTIVÉ</string>
+</resources>

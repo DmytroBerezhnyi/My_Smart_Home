@@ -2,6 +2,7 @@ package com.example.mysmarthome.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -34,17 +35,20 @@ class DeviceAdapter(private val onItemClicked: (Device) -> Unit) :
             binding.root.setOnSingleClickListener { onItemClicked.invoke(device) }
             binding.apply {
                 tvDeviceTitle.text = device.deviceName
-                tvDeviceDescription.text = device.productType.value
 
                 when (device.productType) {
                     ProductType.Light -> {
                         ivDevice.setImageResource(R.drawable.ic_light)
+                        tvDeviceDescription.text = binding.root.context.getString(R.string.light)
                     }
                     ProductType.Heater -> {
                         ivDevice.setImageResource(R.drawable.ic_heater)
+                        tvDeviceDescription.text = binding.root.context.getString(R.string.heater)
                     }
                     ProductType.RollerShutter -> {
                         ivDevice.setImageResource(R.drawable.ic_roller_shutter)
+                        tvDeviceDescription.text =
+                            binding.root.context.getString(R.string.roller_shutter)
                     }
                 }
             }
