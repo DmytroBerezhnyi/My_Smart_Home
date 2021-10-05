@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@+id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.mysmarthome.ui.fragment.splash.SplashFragment"
+        android:label="splash_fragment"
+        tools:layout="@layout/splash_fragment">
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@+id/main_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.mysmarthome.ui.fragment.home.HomeFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/home_fragment">
+        <action
+            android:id="@+id/action_homeFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_deviceLightFragment"
+            app:destination="@id/deviceLightFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_deviceHeaterFragment"
+            app:destination="@id/deviceHeaterFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_deviceRollerShutterFragment"
+            app:destination="@id/deviceRollerShutterFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.example.mysmarthome.ui.fragment.user_profile.UserProfileFragment"
+        android:label="UserProfileFragment"
+        tools:layout="@layout/fragment_user_profile" />
+    <fragment
+        android:id="@+id/deviceLightFragment"
+        android:name="com.example.mysmarthome.ui.fragment.device_light.DeviceLightFragment"
+        android:label="DeviceLightFragment"
+        tools:layout="@layout/fragment_device_light" />
+    <fragment
+        android:id="@+id/deviceHeaterFragment"
+        android:name="com.example.mysmarthome.ui.fragment.device_heater.DeviceHeaterFragment"
+        android:label="DeviceHeaterFragment"
+        tools:layout="@layout/fragment_device_heater" />
+    <fragment
+        android:id="@+id/deviceRollerShutterFragment"
+        android:name="com.example.mysmarthome.ui.fragment.device_roller_shutter.DeviceRollerShutterFragment"
+        android:label="DeviceRollerShutterFragment"
+        tools:layout="@layout/fragment_device_roller_shutter" />
+
+</navigation>

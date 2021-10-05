@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="splash_screen_loading_image_width">250dp</dimen>
+    <dimen name="profile_photo_size">150dp</dimen>
+    <dimen name="device_image_size">80dp</dimen>
+</resources>

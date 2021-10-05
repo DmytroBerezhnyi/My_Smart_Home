@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">My Smart Home</string>
+    <string name="error_connection_timeout">Connection timeout</string>
+    <string name="error_internet">Internet error has occurred</string>
+
+    <string name="error_empty_first_name">First Name can not be empty</string>
+    <string name="error_empty_last_name">Last Name can not be empty</string>
+    <string name="error_empty_city">City can not be empty</string>
+    <string name="error_empty_street">Street can not be empty</string>
+    <string name="error_empty_street_code">Street Code can not be empty</string>
+    <string name="error_empty_postal_code">Postal Code can not be empty</string>
+    <string name="error_empty_country">Country can not be empty</string>
+
+    <string name="user_data_has_been_updated">User data has been updated</string>
+
+    <string name="all">All</string>
+    <string name="light">Light</string>
+    <string name="heater">Heater</string>
+    <string name="roller_shutter">Roller shutter</string>
+    <string name="smart_devices">Smart Devices</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="city">City</string>
+    <string name="postal_code">Postal Code</string>
+    <string name="street">Street</string>
+    <string name="street_code">Street Code</string>
+    <string name="country">Country</string>
+    <string name="birthday">Birthday</string>
+    <string name="update">Update</string>
+</resources>
