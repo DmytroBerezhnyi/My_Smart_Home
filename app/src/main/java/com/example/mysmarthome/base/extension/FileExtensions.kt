@@ -110,11 +110,11 @@ fun Serializable.toByteArray(): ByteArray {
 inline fun <reified T : Serializable> ByteArray.toObject(): T? {
     ByteArrayInputStream(this).use { byteArrayInputStream ->
         ObjectInputStream(byteArrayInputStream).use { objectInput ->
-            with(objectInput.readObject(), {
+            with(objectInput.readObject()) {
                 if (this is T) {
                     return this
                 }
-            })
+            }
         }
     }
     return null
